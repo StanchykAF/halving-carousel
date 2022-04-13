@@ -6,4 +6,15 @@ public class HalvingCarousel extends DecrementingCarousel {
         super(capacity);
     }
 
+    @Override
+    public CarouselRun run(){
+        //throw new UnsupportedOperationException();
+        if (getFlagRun() == 1) {
+            return null;
+        }
+        setFlagRun((byte) 1);
+        return new CarouselRun(getContainer(), getI(), 1);
+    }
+
+
 }
